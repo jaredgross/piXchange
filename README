@@ -1,3 +1,3 @@
 piXchange is a time capsule based photo sharing app. It allows users to create photo albums for events, invite friends, and upload photos to those albums. If the user creates the event as a ‘time capsule’ photos will be kept private from recipients, until the specified chosen date & time. If a ‘time capsule’ is not created, photos will be released to all recipients as soon as the ‘event timer’ expires.
 
-Once photos have been uploaded for an event users can filter, crop, or draw on their images.
+Once photos have been uploaded for an event and the event timer has expired, users can filter, crop, or draw on their images and re-save them to the collective album.
