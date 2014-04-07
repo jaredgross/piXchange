@@ -2,8 +2,8 @@
 //  PagedScrollViewController.h
 //  Flashback
 //
-//  Created by Matt Jared Gross on 11/17/2013.
-//  Copyright (c) 2013 Kickin' Appz.. All rights reserved.
+//  Created by Jared Gross on 11/17/2013.
+//  Copyright (c) 2013 piXchange, LLC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

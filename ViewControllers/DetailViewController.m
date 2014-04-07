@@ -3,7 +3,7 @@
 //  Flashback
 //
 //  Created by Jared Gross on 9/24/13.
-//  Copyright (c) 2013 Kickin'Appz. All rights reserved.
+//  Copyright (c) 2013 piXchange, LLC. All rights reserved.
 //
 
 #import "DetailViewController.h"
@@ -144,11 +144,6 @@
         [NSKeyedArchiver archiveRootObject:nil toFile:scratchImage];
     }
     
-    
-//    if ((self.image.size.height != 800) || (self.image.size.width != 600)){
-//        self.drawPadButton.enabled = NO;
-//    }
-
     // Keeps an instance of the original
     self.imageView.image = self.image;
     self.currentImage = self.imageView.image;
@@ -164,7 +159,6 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component  {
     return [self.filtersArray count];
 }
-
 
 #pragma mark - PICKER ** DELEGATE
 // Returns the array of names assigned to each filter
@@ -208,6 +202,7 @@
     self.navigationController.navigationBar.hidden = YES;
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
+
 
 // Shows crop image screen
 - (IBAction)cropImage:(id)sender
@@ -287,10 +282,6 @@
     self.currentImage = croppedImage;
     self.imageView.image = croppedImage;
     
-//    if ((croppedImage.size.height != 800) || (croppedImage.size.width != 600)){
-//        self.drawPadButton.enabled = NO;
-//    }
-    
     self.hideBarsButton.enabled = YES;
 }
 
@@ -304,27 +295,7 @@
 
 #pragma mark - SEGUE
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-//    if ([segue.identifier isEqualToString:@"showScratchpad"]) { // user choose to draw on the photo
-//        
-//        // set the properties to be handed to the Scratch Pad
-//        ScratchPadViewController *scratchVC = (ScratchPadViewController *)segue.destinationViewController;
-//        scratchVC.albumCount = self.albumCount;
-//        scratchVC.albumRef = self.albumRef;
-//        scratchVC.album = self.album;
-//        scratchVC.albumTitle = self.albumTitle;
-//        scratchVC.objId = self.objId;
-//        scratchVC.index = self.index;
-//        
-//        if (self.imageView.image == self.currentImage){ // the image has not been changed yet
-//            // send the Original image
-//            scratchVC.image = self.currentImage;
-//        }
-//        else
-//            // send the Altered image
-//            scratchVC.image = self.imageView.image;
-//        }
-//    else
+
         if ([segue.identifier isEqualToString:@"showPages"]){ // user choose to return to the Paged Scroll View Controller
         
         // set the properties that will be handed to the Paged Scroller
@@ -338,7 +309,6 @@
     }
     else if ([segue.identifier isEqualToString:@"showAlbum"]){ // user choose to save or delete the image --> update Parse
         
-
         // set the properties to be handed to the Collection View Controller
         CollectionViewController *collVC = (CollectionViewController *)segue.destinationViewController;
         collVC.albumCount = self.albumCount;
@@ -401,14 +371,9 @@
             NSString *str = [NSString stringWithFormat:@"%@/userImagesRef.txt", documentsDirectory];
             NSMutableArray *userImagesArray = [NSKeyedUnarchiver unarchiveObjectWithFile:str];
             
-//            // need to save the image to the current groupAlbums album
-//            NSString *str1 = [NSString stringWithFormat:@"%@/unreleasedGroupAlbums.txt", documentsDirectory];
-//            NSArray *grpAlbs = [NSKeyedUnarchiver unarchiveObjectWithFile:str1];
-            
             NSString *str2 = [NSString stringWithFormat:@"%@/unreleasedUserAlbums.txt", documentsDirectory];
             NSArray *usrAlbs = [NSKeyedUnarchiver unarchiveObjectWithFile:str2];
             
-//            NSMutableArray *groupAlbums = [[NSMutableArray alloc]initWithArray:grpAlbs];
             NSMutableArray *userAlbums = [[NSMutableArray alloc]initWithArray:usrAlbs];
             
             NSInteger i;
@@ -422,22 +387,12 @@
             }
             
             NSMutableArray *tempUsers = [userAlbums objectAtIndex:i];
-//            NSMutableArray *temp = [groupAlbums objectAtIndex:i];
-
             [userImagesArray removeObjectAtIndex:self.index];
             [tempUsers removeObjectAtIndex:self.index];
-//            [temp removeObjectAtIndex:self.index];
             
             [userAlbums replaceObjectAtIndex:i withObject:tempUsers];
             
-//            [groupAlbums replaceObjectAtIndex:i withObject:temp];
-            
-//            [NSKeyedArchiver archiveRootObject:groupAlbums toFile:str1];
             [NSKeyedArchiver archiveRootObject:userImagesArray toFile:str];
-            
-            
-            
-            
             
             [self queryParse];
             delete = YES;
@@ -447,7 +402,6 @@
         if (buttonIndex == 1){ // user choose to save the photo to the album
             self.albumCount = self.albumCount + 1;
             [self.album addObject:self.imageView.image];
-            
             
             NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
             NSString *str = [NSString stringWithFormat:@"%@/userImagesRef.txt", documentsDirectory];
@@ -505,7 +459,6 @@
     }
     
     [hud show:YES];
-    
     
     // get a string reference to the current users ID
     NSString *ref = [NSString stringWithFormat:@"%@", [[PFUser currentUser] objectId]];
@@ -631,17 +584,20 @@
 }
 
 - (void)handleTaps:(UITapGestureRecognizer*)paramSender{ // user tapped the screen
+    
     if ([paramSender isEqual:self.tapGestureRecognizer]){ // check for tapGestureRecognizer
+        
         if (paramSender.numberOfTapsRequired == 1){ // user tapped one time
-            if (self.navigationController.navigationBar.hidden == YES){ // nav & status bars are hidden
-//                self.navigationController.navigationBar.hidden = NO; // unhide the nav & status bars
             
+            if (self.navigationController.navigationBar.hidden == YES){ // nav & status bars are hidden
+                
                 [[self navigationController] setNavigationBarHidden:NO animated:YES];
                 [[UIApplication sharedApplication] setStatusBarHidden:NO];
                 self.toolBar.hidden = NO;
-            }else{ // nav bar is not hidden, so hide it
+            }
+            else{ // nav bar is not hidden, so hide it
+                
                 [[self navigationController] setNavigationBarHidden:YES animated:YES];
-//                self.navigationController.navigationBar.hidden = YES;
                 [[UIApplication sharedApplication] setStatusBarHidden:YES];
                 self.toolBar.hidden = YES;
             }

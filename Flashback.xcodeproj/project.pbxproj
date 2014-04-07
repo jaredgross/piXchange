@@ -16,6 +16,7 @@
 		7F75A39D18F22220002773EE /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F75A39C18F22220002773EE /* logo.png */; };
 		7F75A39F18F22242002773EE /* home_defaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F75A39E18F22242002773EE /* home_defaultImage.png */; };
 		7F75A3A118F22297002773EE /* TrashBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F75A3A018F22297002773EE /* TrashBlue@2x.png */; };
+		7F75A3A518F22F3D002773EE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F75A3A418F22F3D002773EE /* Default-568h@2x.png */; };
 		7F8B89EE17C752C100F5E1F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8B89ED17C752C100F5E1F1 /* UIKit.framework */; };
 		7F8B89F017C752C100F5E1F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8B89EF17C752C100F5E1F1 /* Foundation.framework */; };
 		7F8B8A2717C755A000F5E1F1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8B8A1D17C755A000F5E1F1 /* AudioToolbox.framework */; };
@@ -55,12 +56,6 @@
 		7FD968D3180D20C300B215CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8B89F117C752C100F5E1F1 /* CoreGraphics.framework */; };
 		7FE10BEE1809379F00C621FA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE10BED1809379F00C621FA /* MessageUI.framework */; };
 		7FEDF81E17C9D0CD003B2EBA /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEDF81D17C9D0CD003B2EBA /* FriendsViewController.m */; };
-		7FF392AE18558C2100DBDB25 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF392A818558C2100DBDB25 /* image1.png */; };
-		7FF392AF18558C2100DBDB25 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF392A918558C2100DBDB25 /* image2.png */; };
-		7FF392B018558C2100DBDB25 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF392AA18558C2100DBDB25 /* image3.png */; };
-		7FF392B118558C2100DBDB25 /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF392AB18558C2100DBDB25 /* image4.png */; };
-		7FF392B218558C2100DBDB25 /* image5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF392AC18558C2100DBDB25 /* image5.png */; };
-		7FF392B318558C2100DBDB25 /* image6.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FF392AD18558C2100DBDB25 /* image6.png */; };
 		7FF392B61856721500DBDB25 /* PreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF392B51856721500DBDB25 /* PreviewViewController.m */; };
 		7FF4024C18F212C500BD7A68 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4024B18F212C500BD7A68 /* main.m */; };
 		7FF4024E18F2131100BD7A68 /* PagedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF4024D18F2131100BD7A68 /* PagedScrollViewController.m */; };
@@ -145,6 +140,7 @@
 		7F75A39C18F22220002773EE /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Graphics/logo.png; sourceTree = SOURCE_ROOT; };
 		7F75A39E18F22242002773EE /* home_defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_defaultImage.png; path = Graphics/home_defaultImage.png; sourceTree = SOURCE_ROOT; };
 		7F75A3A018F22297002773EE /* TrashBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TrashBlue@2x.png"; path = "Graphics/Icons/TrashBlue@2x.png"; sourceTree = SOURCE_ROOT; };
+		7F75A3A418F22F3D002773EE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Graphics/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		7F89C9AB17FC05B7008B7350 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7F8A1DCB1808A002009A9197 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CollectionViewController.h; path = ViewControllers/CollectionViewController.h; sourceTree = "<group>"; };
 		7F8B89ED17C752C100F5E1F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -204,12 +200,6 @@
 		7FE81B1A17C87AD900499B1F /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutViewController.h; path = ViewControllers/AboutViewController.h; sourceTree = "<group>"; };
 		7FEDF81C17C9D0CD003B2EBA /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendsViewController.h; path = ViewControllers/FriendsViewController.h; sourceTree = "<group>"; };
 		7FEDF81D17C9D0CD003B2EBA /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendsViewController.m; path = ViewControllers/FriendsViewController.m; sourceTree = "<group>"; };
-		7FF392A818558C2100DBDB25 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
-		7FF392A918558C2100DBDB25 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
-		7FF392AA18558C2100DBDB25 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
-		7FF392AB18558C2100DBDB25 /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
-		7FF392AC18558C2100DBDB25 /* image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image5.png; sourceTree = "<group>"; };
-		7FF392AD18558C2100DBDB25 /* image6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image6.png; sourceTree = "<group>"; };
 		7FF392B41856721500DBDB25 /* PreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviewViewController.h; path = ViewControllers/PreviewViewController.h; sourceTree = "<group>"; };
 		7FF392B51856721500DBDB25 /* PreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviewViewController.m; path = ViewControllers/PreviewViewController.m; sourceTree = "<group>"; };
 		7FF4024B18F212C500BD7A68 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SupportingFiles/main.m; sourceTree = SOURCE_ROOT; };
@@ -507,13 +497,13 @@
 		7F8B89F417C752C100F5E1F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7F75A3A418F22F3D002773EE /* Default-568h@2x.png */,
 				7FF4027018F2169500BD7A68 /* AppDelegate.h */,
 				7FF4027118F2169500BD7A68 /* AppDelegate.m */,
 				7FF4024B18F212C500BD7A68 /* main.m */,
 				7FCE336918F201610024957C /* Flashback-Info.plist */,
 				7FCE336A18F201610024957C /* Flashback-Prefix.pch */,
 				7FCE335F18F1FC400024957C /* MBProgressView */,
-				7FF392A718558C2100DBDB25 /* DefaultImages */,
 				7F8B8A5B17C7656E00F5E1F1 /* Graphics */,
 				7FA58107180130DD009D752E /* ImageBlur */,
 				7F5A003D17F19E0700229A53 /* Segue Fade */,
@@ -597,20 +587,6 @@
 			);
 			name = sampleImages;
 			sourceTree = "<group>";
-		};
-		7FF392A718558C2100DBDB25 /* DefaultImages */ = {
-			isa = PBXGroup;
-			children = (
-				7FF392A818558C2100DBDB25 /* image1.png */,
-				7FF392A918558C2100DBDB25 /* image2.png */,
-				7FF392AA18558C2100DBDB25 /* image3.png */,
-				7FF392AB18558C2100DBDB25 /* image4.png */,
-				7FF392AC18558C2100DBDB25 /* image5.png */,
-				7FF392AD18558C2100DBDB25 /* image6.png */,
-			);
-			name = DefaultImages;
-			path = app_Graphics/DefaultImages;
-			sourceTree = SOURCE_ROOT;
 		};
 		7FF392B71856779700DBDB25 /* Friends/Camera */ = {
 			isa = PBXGroup;
@@ -730,7 +706,6 @@
 				7FF4029518F21C0800BD7A68 /* camTimer@2x.png in Resources */,
 				7F75A39D18F22220002773EE /* logo.png in Resources */,
 				7FF4029418F21C0800BD7A68 /* Brush@2x.png in Resources */,
-				7FF392B018558C2100DBDB25 /* image3.png in Resources */,
 				7FBB6BA4182D9339001B3A59 /* PEPhotoCropEditor.bundle in Resources */,
 				7F75A39F18F22242002773EE /* home_defaultImage.png in Resources */,
 				7FF402C518F21C1F00BD7A68 /* piXchange_tutorial_screen3_i5.png in Resources */,
@@ -746,20 +721,17 @@
 				7FF402B518F21C1400BD7A68 /* image6.png in Resources */,
 				7F9264EB18F20DB40077BD8B /* pagesOverlayView.xib in Resources */,
 				7FF4029818F21C0800BD7A68 /* ChangeCameraSelected@2x.png in Resources */,
-				7FF392B218558C2100DBDB25 /* image5.png in Resources */,
 				7FF402C818F21C1F00BD7A68 /* piXchange_tutorial_screen5_i4.png in Resources */,
 				7F9264EA18F20DB40077BD8B /* OverlayView.xib in Resources */,
 				7FF402CF18F21C6400BD7A68 /* scroller.png in Resources */,
 				7FF402C318F21C1F00BD7A68 /* piXchange_tutorial_screen2_i5.png in Resources */,
 				7FF4029B18F21C0800BD7A68 /* Contacts@2x.png in Resources */,
-				7FF392B318558C2100DBDB25 /* image6.png in Resources */,
 				7FF402A618F21C0800BD7A68 /* paintbrush.png in Resources */,
-				7FF392B118558C2100DBDB25 /* image4.png in Resources */,
 				7FF402CD18F21C6400BD7A68 /* mask.png in Resources */,
 				7FF4029218F21C0800BD7A68 /* Airbrush-icon.png in Resources */,
+				7F75A3A518F22F3D002773EE /* Default-568h@2x.png in Resources */,
 				7F9264DA18F20CCD0077BD8B /* Resources in Resources */,
 				7F9264E918F20DB40077BD8B /* editPhoto_i5.xib in Resources */,
-				7FF392AF18558C2100DBDB25 /* image2.png in Resources */,
 				7F9264EC18F20DB40077BD8B /* preview_i4.xib in Resources */,
 				7F9264E818F20DB40077BD8B /* editPhoto_i4.xib in Resources */,
 				7FF402B318F21C1400BD7A68 /* image4.png in Resources */,
@@ -768,7 +740,6 @@
 				7FF402B418F21C1400BD7A68 /* image5.png in Resources */,
 				7FF402A018F21C0800BD7A68 /* flashIcon@2x.png in Resources */,
 				7FF4029F18F21C0800BD7A68 /* editIcon.png in Resources */,
-				7FF392AE18558C2100DBDB25 /* image1.png in Resources */,
 				7F9264EF18F20DB40077BD8B /* scratchpad_i5.xib in Resources */,
 				7FF402D118F21D1100BD7A68 /* backIcon.png in Resources */,
 				7FF4029C18F21C0800BD7A68 /* Crop@2x.png in Resources */,

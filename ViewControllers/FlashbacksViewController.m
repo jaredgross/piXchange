@@ -3,7 +3,7 @@
 //  piXchange
 //
 //  Created by Jared Gross on 11/5/13.
-//  Copyright (c) 2013 Kickin' Appz. All rights reserved.
+//  Copyright (c) 2013 piXchange, LLC. All rights reserved.
 //
 
 #import "FlashbacksViewController.h"
@@ -148,7 +148,6 @@
         }
         else{
             if ([objects count] == 0){
-//                [self setDefaultDataSource];
                 [hud hide:YES];
             }
             else{
@@ -158,7 +157,6 @@
                     NSDate *date = [obj valueForKey:@"createdAt"];
                     NSDate *camDeadline = [obj valueForKey:@"deadline"];
                     NSDate *releaseDate = [obj valueForKey:@"releaseDate"];
-//                    NSMutableArray *recIDs = [obj valueForKey:@"recipientIds"];
                     NSString *eventID = [obj valueForKey:@"objectId"];
                     
                     // compare the dates

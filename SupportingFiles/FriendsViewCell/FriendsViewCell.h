@@ -2,8 +2,8 @@
 //  FriendsViewCell.h
 //  Flashback
 //
-//  Created by Shilpa Modi on 12/21/13.
-//  Copyright (c) 2013 Flashback Studios. All rights reserved.
+//  Created by Jared Gross on 12/21/13.
+//  Copyright (c) 2013 piXchange, LLC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

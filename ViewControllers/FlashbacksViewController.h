@@ -3,7 +3,7 @@
 //  piXchange
 //
 //  Created by Jared Gross on 11/5/13.
-//  Copyright (c) 2013 Kickin Appz. All rights reserved.
+//  Copyright (c) 2013 piXchange, LLC. All rights reserved.
 //
 
 #import <Parse/Parse.h>

@@ -91,9 +91,6 @@
         userAlbumsArray = [NSKeyedUnarchiver unarchiveObjectWithFile:str];
     }
     
-    
-
-    
     NSMutableArray *albumData;
     // get the album array related to the objectID
     for (NSArray *array in userAlbumsArray){
@@ -150,9 +147,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-//    [self.scrollView setDirectionalLockEnabled:YES];
-    
-    
     self.pageCount = self.album.count;
     
     // Set up the array to hold the views for each page
@@ -186,8 +180,6 @@
         pageWidth = self.scrollView.frame.size.width;
     }
     // First, determine which page is currently visible
-//    CGFloat pageWidth = self.scrollView.frame.size.width;
-    
     page = (NSInteger)floor((self.scrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
     
     if (page < self.pageCount && page >= 0){
@@ -343,7 +335,6 @@
     else{
         newPageView.contentMode = UIViewContentModeScaleAspectFit;
     }
-//    newPageView.contentMode = UIViewContentModeScaleAspectFit;
     newPageView.frame = frame;
     [self.scrollView addSubview:newPageView];
     

@@ -3,7 +3,7 @@
 //  Flashback
 //
 //  Created by Jared Gross on 8/25/13.
-//  Copyright (c) 2013 Kickin' Appz All rights reserved.
+//  Copyright (c) 2013 piXchange, LLC. All rights reserved.
 //
 
 #import "FriendsViewController.h"
@@ -105,26 +105,8 @@
     self.tableView.dataSource = self;
 
     self.NSDD = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    
-    // if it's the users first time they will be alerted to check out the "how it works" page
-//    NSUserDefaults *NSUD = [NSUserDefaults standardUserDefaults];
-    
-    
+
     NSString *invite = [NSString stringWithFormat:@"%@/pushInvite.txt", self.NSDD];
-    NSString *pushInvite = [NSKeyedUnarchiver unarchiveObjectWithFile:invite];
-    
-    if (pushInvite == nil){
-//        if (![NSUD valueForKey:@"friendsTutorial"]){
-//            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"INVITE SOME FRIENDS"
-//                                                            message:@"Now, invite some friends to join the event then tap the top right button to start the camera"
-//                                                           delegate:self
-//                                                  cancelButtonTitle:@"OK"
-//                                                  otherButtonTitles:nil];
-//            [alert show];
-//            [NSUD setObject:@"1" forKey:@"friendsTutorial"];
-//            [NSUD synchronize];
-//        }
-    }
     [NSKeyedArchiver archiveRootObject:nil toFile:invite];
 }
 
@@ -197,7 +179,6 @@
     PFUser *user = [array objectAtIndex:indexPath.row];
     
     if ([self.pushRecipients containsObject:user]) {
-        //cell.accessoryType = UITableViewCellAccessoryCheckmark;
         [cell.addOrInviteButton setImage:[UIImage imageNamed:@"checkmark.png"]
                                 forState:UIControlStateNormal];
     }
@@ -206,7 +187,6 @@
                                 forState:UIControlStateNormal];
     }
     else{
-        //cell.accessoryType = UITableViewCellAccessoryNone;
         [cell.addOrInviteButton setImage:[UIImage imageNamed:@"add.png"]
                                 forState:UIControlStateNormal];
         }
@@ -1083,7 +1063,6 @@
                     }
                     // set unique recipientIDs ONLY - save to Parse in background
                     [event addUniqueObjectsFromArray:uniqueUserIDs forKey:@"recipientIds"];
-            //        [event setObject:uniqueUserIDs forKey:@"recipientIds"];
                     [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                             
                     if (error) {
@@ -1111,12 +1090,7 @@
         }];
     }
     else{
- //       NSData *imagesData = [NSKeyedArchiver archivedDataWithRootObject:nil];
- //           PFFile *file = [PFFile fileWithData:imagesData];
-
- //           NSString *ref = [NSString stringWithFormat:@"%@", [[PFUser currentUser] objectId]];
             eventCreator = YES;
- //           [event setObject:file forKey:ref];
             [event setObject:self.theTitle forKey:@"title"];
             [event setObject:camDeadline forKey:@"deadline"];
             [event setObject:recipientNames forKey:@"recipientIds"];

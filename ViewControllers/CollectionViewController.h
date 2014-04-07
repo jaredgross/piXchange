@@ -3,7 +3,7 @@
 //  Flashback
 //
 //  Created by Jared Gross on 10/11/13.
-//  Copyright (c) 2013 Kickin' Apps. All rights reserved.
+//  Copyright (c) 2013 piXchange, LLC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

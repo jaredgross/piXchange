@@ -3,7 +3,7 @@
 //  piXchange
 //
 //  Created by Jared Gross on 8/25/13.
-//  Copyright (c) 2013 Kickin' Appz. All rights reserved.
+//  Copyright (c) 2013 piXchange, LLC. All rights reserved.
 //
 
 #import "ActionSheetController.h"
@@ -93,7 +93,6 @@ static NSString *OtherCell = @"otherCell";     // the remaining cells at the end
 -(void)viewWillAppear:(BOOL)animated{
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-  //  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
      [[self navigationController] setNavigationBarHidden:NO animated:YES];
 
     self.textField.text = nil;
@@ -115,22 +114,6 @@ static NSString *OtherCell = @"otherCell";     // the remaining cells at the end
     UITableViewCell *pickerViewCellToCheck = [self.tableView dequeueReusableCellWithIdentifier:DatePickerID];
     self.pickerCellRowHeight = pickerViewCellToCheck.frame.size.height;
 }
-//
-//-(void)viewDidAppear:(BOOL)animated{
-//    NSUserDefaults *NSUD = [NSUserDefaults standardUserDefaults];
-//    if (![NSUD valueForKey:@"tutorialSetup"]){
-//        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"CREATE A NEW EVENT"
-//                                                        message:@"Set the Event Timer to the day/time the event will end (max 4 days). Choose a Release day & time to create a 'digital time capsule' for the event - where the photos will be held until the specified date."
-//                                                       delegate:self
-//                                              cancelButtonTitle:@"OK"
-//                                              otherButtonTitles:nil];
-//        [alert show];
-//        [NSUD setObject:@"1" forKey:@"tutorialSetup"];
-//        [NSUD synchronize];
-//    }
-//
-//}
-
 
 #pragma mark - UITableViewDataSource
 // Configures the rows/cells
@@ -156,11 +139,10 @@ static NSString *OtherCell = @"otherCell";     // the remaining cells at the end
     
     if (indexPath.row == 3)
     {
-        // we decide here that last cell in the table is not selectable (it's just an indicator)
+        // we set here that last cell in the table is not selectable
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    // if we have a date picker open whose cell is above the cell we want to update, then we have one more cell than the model allows
     NSInteger modelRow = indexPath.row;
     if (self.datePickerIndexPath != nil && self.datePickerIndexPath.row < indexPath.row)
     {
@@ -168,16 +150,15 @@ static NSString *OtherCell = @"otherCell";     // the remaining cells at the end
     }
     
     NSDictionary *itemData = self.dataArray[modelRow];
-    
-    // proceed to configure our cell
+   
     if ([cellID isEqualToString:DateCellID])
     {
-        // we have a date picker, populate the date field
+        // populate the date field
         cell.textLabel.text = [itemData valueForKey:TitleKey];
     }
     else if ([cellID isEqualToString:OtherCell])
     {
-        // just assign it's text label
+        // assign it's text label
         cell.textLabel.text = [itemData valueForKey:TitleKey];
     }
 	return cell;
@@ -577,10 +558,8 @@ static NSString *OtherCell = @"otherCell";     // the remaining cells at the end
                                                    fromDate:[NSDate date]
                                                      toDate:now
                                                     options:NSWrapCalendarComponents];
-    }else{
-
-        // establish a calander to use
-//        self.gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    }
+    else{
         // get the components to use from the date
         NSUInteger dateFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
         NSDateComponents *dateComponents = [self.gregorian components:dateFlags
@@ -679,12 +658,12 @@ static NSString *OtherCell = @"otherCell";     // the remaining cells at the end
 
 // gets the users current location
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
-//    NSLog(@"didUpdateToLocation: %@", newLocation);
+    NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
 
     // Reverse Geocoding
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-//        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
             [locationManager stopUpdatingLocation];
             
@@ -693,17 +672,12 @@ static NSString *OtherCell = @"otherCell";     // the remaining cells at the end
                                  placemark.locality,
                                  placemark.administrativeArea];
         } else {
- //           NSLog(@"%@", error.debugDescription);
+            NSLog(@"%@", error.debugDescription);
         }
         // write the location to storage
         NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         NSString *location = [NSString stringWithFormat:@"%@/location.txt", documentsDirectory];
         [NSKeyedArchiver archiveRootObject:self.locationData toFile:location];
-        
-//        NSLog(@"Title: %@", self.textField.text);
-//        NSLog(@"Location:  %@", self.locationData);
-//        NSLog(@"Deadline: %@", self.deadlineCounter);
-//        NSLog(@"Release Counter: %@", self.releaseCounter);
     } ];
 }
 

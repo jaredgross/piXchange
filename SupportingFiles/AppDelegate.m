@@ -3,7 +3,7 @@
 //  Flashback
 //
 //  Created by Jared Gross on 8/25/13.
-//  Copyright (c) 2013 Kickin' Appz All rights reserved.
+//  Copyright (c) 2013 piXchange, LLC. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -68,7 +68,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
         [currentInstallation saveInBackground];
         currentInstallation[@"user"] = [PFUser currentUser];
     
-        //    [currentInstallation addUniqueObject:@"FlashbackInvite" forKey:@"channels"];
         [currentInstallation saveInBackground];
     }
 }
@@ -97,18 +96,6 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSLog(@"eventID %@ archived", eventID);
 
     NSLog(@"Push notification received for event: %@", eventID);
-    
-//    NSUserDefaults *NSUD = [NSUserDefaults standardUserDefaults];
-//    [NSUD setObject:nil forKey:@"activeAlbums"];
-//    [NSUD setObject:nil forKey:@"activeDeadlines"];
-//    [NSUD setObject:nil forKey:@"activeTitles"];
-//    [NSUD setObject:nil forKey:@"activeEventIDs"];
-//    [NSUD setObject:nil forKey:@"activeGroupImagesReference"];
-//    
-//    [NSUD setObject:nil forKey:@"defaults"];
-//    
-//    [NSUD synchronize];
-    
     ActiveViewController *avc = [[ActiveViewController alloc] init];
     [avc refresh];
 }

@@ -3,7 +3,7 @@
 //  piXchange
 //
 //  Created by Jared Gross on 8/25/13.
-//  Copyright (c) 2013 Kickin' Appz. All rights reserved.
+//  Copyright (c) 2013 piXchange, LLC. All rights reserved.
 //
 
 #import "HomeViewController.h"
@@ -205,7 +205,6 @@
                     NSString *userID = [NSString stringWithFormat:@"%@", [[PFUser currentUser] objectId]];
                     NSString *eventTitle = [obj valueForKey:@"title"];
                     NSString *eventID = [obj valueForKey:@"objectId"];
-                    //                NSMutableArray *recIDs = [obj valueForKey:@"recipientIds"];
                     
                     if (![earlierDeadlineDate isEqual:localizedDeadline]){ // the Event is still active
                         [releasedObjIDs addObject:[obj valueForKey:@"objectId"]];
@@ -228,11 +227,9 @@
                                     if ([obj valueForKey:@"content"] != nil){ // user has photos saved, put them into an array
                                         
                                         PFFile *file = [obj valueForKey:@"content"];
-                                        //                                   file = [obj valueForKey:userID];
                                         
                                         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                                             
-                                            //   NSData *data = [file getData];
                                             NSMutableArray *userImages = [NSKeyedUnarchiver unarchiveObjectWithData:data];
                                             
                                             if (userImages.count != 0 && userImages != nil){
@@ -256,18 +253,13 @@
                                 PFFile *file = [obj valueForKey:@"content"];
                                 
                                 if (file != nil){
-                                    //PFFile *file = [array valueForKey:@"content"];
                                     [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                                         
-                                        // NSData *data = [file getData];
                                         NSMutableArray *images = nil;
                                         images = [NSKeyedUnarchiver unarchiveObjectWithData:data];
                                         
-                                        if (images != nil){ //|| images.count == 0){
-                                            //                                    images = [[NSMutableArray alloc]initWithCapacity:images.count];
-                                            //                                    [activeGroupAlbums addObject:images];
-                                            //                                }
-                                            //                                else{
+                                        if (images != nil){
+                                            
                                             if (activeGroupAlbums.count == 0) {
                                                 [activeGroupAlbums addObject:images];
                                             }
@@ -332,15 +324,10 @@
                         [NSUD setObject:releasedTitles forKey:@"oldTitlesReference"];
                         [NSUD synchronize];
                         
-                        
-                        //                  for (NSString *ID in recIDs){
-                        
                         PFQuery *query = [PFQuery queryWithClassName:@"Images"];
                         [query whereKey:@"parent" equalTo:eventID];
-                        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                            
-                            // NSObject *array = objects;
-                            // PFFile *file;
+                        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+                        {
                             if (objects.count == 0 || error){
                                 [hud hide:YES];
                                 return;
@@ -385,13 +372,6 @@
                                                 
                                             }
                                             
-                                            //                                if (images == nil || images.count == 0){
-                                            //                                    NSMutableArray *array = [[NSMutableArray alloc]initWithCapacity:images.count];
-                                            //                                    [releasedAlbums addObject:array];
-                                            //                                }
-                                            //                                else{
-                                            //                                    [releasedAlbums addObject:images];
-                                            //                                }
                                             if ([[obj valueForKey:@"userID"] isEqual:[[PFUser currentUser] objectId]]){ // its a user image - add it to the userImagesArray
                                                 [releasedObjIDs addObject:[obj valueForKey:@"objectId"]];
                                             }
@@ -415,36 +395,10 @@
                                     
                                 }
                             }
-                            
-                            //                           for (PFFile *file in [array valueForKey:@"content"]){
-                            
-                            // NSObject *ob = newFile;
-                            
-                            
-                            
-                            //                          newFile = [array valueForKey:@"content"]; //objectAtIndex:0];                            }
-                            
-                            //                            PFFile *newFile = [[array valueForKey:@"content"]objectAtIndex:0];
-                            //                           }
-                            
-                            //                           PFFile *file = [obj valueForKey:ID];
-                            
-                            
-                            
-                            
-                            
                         }];
-                        
-                        
-                        //                        if ([obj valueForKey:ID]){
-                        //
-                        //
-                        //                        }
-                        //                   }
                     }
                     
                     else if (![earlierReleaseDate isEqual:localizedRelease]){ // album is awaiting timed release
-                        
                         
                         [currentTitles addObject:eventTitle];
                         [currentTimers addObject:localizedRelease];
@@ -455,21 +409,14 @@
                         [NSUD setObject:currentTitles forKey:@"titlesReference"];
                         [NSUD synchronize];
                         
-                        
-                        
                         PFQuery *query = [PFQuery queryWithClassName:@"Images"];
                         [query whereKey:@"parent" equalTo:eventID];
                         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                             
-                            for (PFObject *obj in objects){
-                                
-                                //            for (NSString *ID in recIDs){
-                                
-                                //  int objectsCount = objects.count;
-                                //    if([[obj valueForKey:@"userID"] isEqual:ID]){
+                            for (PFObject *obj in objects)
+                            {
                                 PFFile *file = [obj valueForKey:@"content"];
                                 
-                                //  for (int i = 0; i < objects.count; i++){
                                 [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                                     
                                     NSArray *images = nil;
@@ -499,13 +446,10 @@
                                                         [currentGroupAlbums addObject:temp];
                                                         break;
                                                     }
-                                                    
                                                 }
                                             }
                                             [currentGroupAlbums addObject:images];
                                         }
-                                        
-                                        
                                     }
                                     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
                                     NSString *album = [NSString stringWithFormat:@"%@/unreleasedGroupAlbums.txt", documentsDirectory];
@@ -516,21 +460,15 @@
                                     [self setPicker];
                                 }];
                                 
-                                //                                   }
-                                
-                                //    for (obj in objects){
-                                
                                 if ([[obj valueForKey:@"userID"] isEqual:[[PFUser currentUser] objectId]]){ // get user images
                                     
                                     if ([obj valueForKey:@"content"] != nil){ // user has photos saved, put them into an array
                                         
                                         PFFile *file = [obj valueForKey:@"content"];
-                                        //file = [ valueForKey:userID];
                                         NSString *objID = [obj valueForKey:@"objectId"];
                                         
                                         [currentObjIDs addObject:objID];
                                         
-                                        //                               PFFile *file = [obj valueForKey:userID];
                                         [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                                             
                                             NSArray *userImages = [NSKeyedUnarchiver unarchiveObjectWithData:data];
@@ -555,34 +493,14 @@
                                         [self startTimer];
                                         
                                     }
-                                    //                                    }
-                                    
                                 };
-                                
-                                //             }
                             }
-                            
-                            
-                            //           }
                         }];
-                        
-                        
-                        //                            if ([obj valueForKey:ID]){
-                        //                                PFFile *file = [obj valueForKey:ID];
-                        
-                        //                                                            }
-                        //     }
-                        
-                        //                    for (NSObject *obj in objects){
-                        //                    }
                     }
                     else{
                         [hud hide:YES];
                     }
-
-            }
-            
-            
+                }
             }
         }
     }];
@@ -1115,11 +1033,6 @@
 
 - (void)setBackgroundImage {
     UIImage *blur = [self.tiltImageView.image applyLightEffect];
-    
-    // if blur size is larger (horizontal) than screen dimensions we need to create a new rect and draw only the portion of the image shown from tiltimageview 
-    
-    
-    
     self.blurImageView.image = [self maskImage:blur withMask:[UIImage imageNamed:@"mask"]];
 }
 
