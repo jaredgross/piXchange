@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FDA5AC5D-B896-4BB5-A581-A2BB30EA32BA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Flashback</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>402133CE-ED35-477B-BC17-1C4624437D1B</key>
+		<string>https://github.com/jaredgross/piXchange.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Flashback.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>402133CE-ED35-477B-BC17-1C4624437D1B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jaredgross/piXchange.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>402133CE-ED35-477B-BC17-1C4624437D1B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>402133CE-ED35-477B-BC17-1C4624437D1B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>piXchange</string>
+		</dict>
+	</array>
+</dict>
+</plist>

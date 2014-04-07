@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
+            <connections>
+                <outlet property="cancelButton" destination="Gu5-ci-8fD" id="hrt-Om-7fT"/>
+                <outlet property="doneButton" destination="d42-5I-mc4" id="wwm-wI-ZkU"/>
+                <outlet property="drawPadButton" destination="sWa-he-R2s" id="G6U-Hq-WH4"/>
+                <outlet property="editPhotoOverlay" destination="1" id="uFM-1Q-ZYd"/>
+                <outlet property="hideBarsButton" destination="4VO-qw-qaf" id="hkY-cw-NOw"/>
+                <outlet property="hidePicker" destination="5fD-Mh-Ofz" id="Ri1-XQ-r8E"/>
+                <outlet property="imageView" destination="gts-Og-lKW" id="8w4-cx-bu5"/>
+                <outlet property="pickerView" destination="LuD-fF-KMd" id="n7p-hc-mlV"/>
+                <outlet property="showPicker" destination="A7C-NR-D5z" id="FhX-CX-zTd"/>
+                <outlet property="toolBar" destination="kgG-Jk-EZK" id="stt-aj-o0j"/>
+                <outlet property="trashButton" destination="mv6-kO-ytB" id="bVC-uw-PeL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gts-Og-lKW">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <pickerView contentMode="scaleToFill" id="LuD-fF-KMd">
+                    <rect key="frame" x="0.0" y="317" width="320" height="162"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.99215692280000001" green="0.99607849120000003" blue="0.99607849120000003" alpha="0.5" colorSpace="deviceRGB"/>
+                </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="d42-5I-mc4">
+                    <rect key="frame" x="263" y="317" width="57" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Done">
+                        <color key="titleColor" red="1" green="0.0" blue="0.050980396570000003" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="doneButton:" destination="-1" eventType="touchUpInside" id="0Sa-ve-6e7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.80000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="A7C-NR-D5z">
+                    <rect key="frame" x="129" y="416" width="63" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="SHOW">
+                        <color key="titleColor" red="0.0" green="0.96078437569999997" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showPicker:" destination="-1" eventType="touchUpInside" id="fH2-rz-xC3"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5fD-Mh-Ofz">
+                    <rect key="frame" x="136" y="317" width="47" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                    <state key="normal" title="HIDE">
+                        <color key="titleColor" red="0.094117656349999995" green="0.231372565" blue="0.55294120309999995" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="hidePicker:" destination="-1" eventType="touchUpInside" id="0eO-32-B7c"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Gu5-ci-8fD">
+                    <rect key="frame" x="0.0" y="317" width="70" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" red="1" green="0.0" blue="0.050980396570000003" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelButton:" destination="-1" eventType="touchUpInside" id="gpP-WX-xpm"/>
+                    </connections>
+                </button>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" id="kgG-Jk-EZK">
+                    <rect key="frame" x="0.0" y="438" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem image="Brush.png" id="sWa-he-R2s">
+                            <connections>
+                                <action selector="showScratchpad:" destination="-1" id="nxL-19-Wg4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="PIX-Wk-1X6"/>
+                        <barButtonItem image="Crop.png" id="58V-TZ-cbs">
+                            <connections>
+                                <action selector="cropImage:" destination="-1" id="7kg-TR-Ezz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="CIG-FG-Iyw"/>
+                        <barButtonItem image="editIcon.png" id="bim-Ol-Z5H">
+                            <connections>
+                                <action selector="filterButton:" destination="-1" id="gF5-NB-ZwK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="LQD-Lo-BTz"/>
+                        <barButtonItem systemItem="trash" id="mv6-kO-ytB">
+                            <connections>
+                                <action selector="deleteImage:" destination="-1" id="AqV-KG-yCW"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4VO-qw-qaf">
+                    <rect key="frame" x="0.0" y="46" width="320" height="391"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="hideBarsButton:" destination="-1" eventType="touchUpInside" id="dxX-gv-Etk"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Brush.png" width="15" height="23"/>
+        <image name="Crop.png" width="18" height="18"/>
+        <image name="editIcon.png" width="24" height="24"/>
+    </resources>
+</document>
